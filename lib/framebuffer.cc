@@ -218,7 +218,8 @@ void Framebuffer::Clear() {
 static uint16_t luminance_cie1931(uint8_t c, uint8_t brightness) {
   float out_factor = ((1 << kBitPlanes) - 1);
   float v = (float) c * brightness / 255.0;
-  return out_factor * ((v <= 8) ? v / 902.3 : pow((v + 16) / 116.0, 3));
+  //return out_factor * ((v <= 8) ? v / 902.3 : pow((v + 16) / 116.0, 4));
+  return out_factor * pow((float)c / 255, 3);
 }
 
 struct ColorLookup {

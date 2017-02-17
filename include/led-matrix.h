@@ -255,7 +255,7 @@ public:
   // (see documentation in canvas.h)
   virtual int width() const;
   virtual int height() const;
-  virtual void SetPixel(int x, int y,
+  virtual inline void SetPixel(int x, int y,
                         uint8_t red, uint8_t green, uint8_t blue);
   virtual void Clear();
   virtual void Fill(uint8_t red, uint8_t green, uint8_t blue);
